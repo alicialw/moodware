@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Moodware Collection for Instant Noodles</title>
+    <meta name="theme-color" content="black">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <meta property="og:title" content="The Moodware Collection for Instant Noodles">
+    <meta property="og:description" content=" ">
+    <meta property="og:image" content=" ">
+    <meta property="og:url" content="https://alicialw.github.io/nangmua">
+
+    <meta name="twitter:card" content="">
+    <meta name="twitter:title" content="The Moodware Collection for Instant Noodles">
+    <meta name="twitter:description" content=" ">
+    <meta name="twitter:image" content=" ">
+
+    <link rel="icon" type="image/svg+xml" href=" ">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@4.0.0/lib/anime.iife.min.js"></script>
+    <script src="libraries/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.brush"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div id="controls-container">
+            <h2>Moodware Parameter</h2>
+            <div class="parameter-section">
+                <h3>Base</h3>
+                <div id="base-controls">
+                    <div class="control-group">
+                        <label for="oiliness">Oiliness</label>
+                        <input type="range" id="oiliness" min="0" max="1" step="0.1" value="5">
+                        <span class="value-display">5</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="soupLevel">Soup Level</label>
+                        <input type="range" id="soupLevel" min="0" max="1" step="0.01" value="0.8">
+                        <span class="value-display">0.8</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="parameter-section">
+                <h3>Texture</h3>
+                <div id="taste-controls">
+                    <div class="control-group">
+                        <label for="salt">Saltiness</label>
+                        <input type="range" id="salt" min="0" max="1" step="0.01" value="0.8">
+                        <span class="value-display">0.8</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="sweet">Sweetnewss</label>
+                        <input type="range" id="sweet" min="0" max="1" step="0.01" value="0.2">
+                        <span class="value-display">0.2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="parameter-section">
+                <h3>Color</h3>
+                <div id="color-controls">
+                    <div class="control-group">
+                        <label for="acidity">Acidity</label>
+                        <input type="range" id="acidity" min="0" max="1" step="0.01" value="0.5">
+                        <span class="value-display">0.5</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="spice">Spiciness</label>
+                        <input type="range" id="spice" min="0" max="1" step="0.01" value="0.9">
+                        <span class="value-display">0.9</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="parameter-section">
+                <h3>Intensity</h3>
+                <div id="intensity-controls">
+                    <div class="control-group">
+                        <label for="temperature">Temperature</label>
+                        <input type="range" id="temperature" min="0" max="1" step="0.01" value="0.7">
+                        <span class="value-display">0.7</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="parameter-section">
+                <h3>Time</h3>
+                <div id="visual-controls">
+                    <div class="control-group">
+                        <label for="numLines">Time Used (hours)</label>
+                        <input type="range" id="numLines" min="50" max="2000" step="50" value="500">
+                        <span class="value-display">500</span>
+                    </div>
+                    <!--
+                    <div class="control-group">
+                        <label for="lineLength">Line Length</label>
+                        <input type="range" id="lineLength" min="500" max="1500" step="100" value="1500">
+                        <span class="value-display">1500</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="stepSize">Step Size</label>
+                        <input type="range" id="stepSize" min="5" max="10" step="1" value="6">
+                        <span class="value-display">2</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="resolution">Field Resolution</label>
+                        <input type="range" id="resolution" min="0.001" max="0.02" step="0.001" value="0.01">
+                        <span class="value-display">0.01</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="showGrid">
+                            <input type="checkbox" id="showGrid">
+                            Show Flow Field Grid
+                        </label>
+                    </div>
+                    -->
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <button id="resetButton">Reset Pattern</button>
+                <!--<button id="saveButton">Save Image</button>-->
+            </div>
+        </div>
+
+        <div id="bowl-container">
+            <div id="canvas-container"></div>
+            <img id="bowl" src="media/bowl.jpg">
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/vessel.js"></script>
+</body>
+
+</html>
